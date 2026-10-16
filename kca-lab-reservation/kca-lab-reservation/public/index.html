@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KCA Lab Reservation</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="topbar" hidden>
+    <a class="brand" href="#/catalog"><span class="logo">KCA</span> Lab Reservation</a>
+    <button id="menu-btn" aria-label="Menu">☰</button>
+    <nav id="nav"></nav>
+    <div class="who">
+      <a href="#/notifications" class="bell" title="Notifications">🔔<span id="badge" hidden>0</span></a>
+      <span id="user-label"></span>
+      <button id="logout" class="btn ghost small">Sign out</button>
+    </div>
+  </header>
+  <main id="app" aria-live="polite"></main>
+  <dialog id="modal"></dialog>
+  <div id="toasts"></div>
+  <script src="/vendor/html5-qrcode.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

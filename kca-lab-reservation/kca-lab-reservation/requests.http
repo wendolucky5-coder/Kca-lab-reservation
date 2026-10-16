@@ -1,0 +1,24 @@
+### API playground — install the "REST Client" VS Code extension, then click "Send Request".
+@base = http://localhost:3000
+
+### Sign in (cookie is stored automatically by REST Client)
+# @name login
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "student@kca.local", "password": "Password123!" }
+
+### Catalog
+GET {{base}}/api/resources
+
+### Reserve item 3 (edit the times!)
+POST {{base}}/api/reservations
+Content-Type: application/json
+
+{ "resource_id": 3, "start_time": "2026-10-20T08:00:00Z", "end_time": "2026-10-20T10:00:00Z", "purpose": "Practical demo" }
+
+### My reservations
+GET {{base}}/api/reservations
+
+### Notifications
+GET {{base}}/api/notifications

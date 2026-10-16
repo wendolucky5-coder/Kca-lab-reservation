@@ -1,0 +1,23 @@
+{
+  "name": "kca-lab-reservation",
+  "version": "1.0.0",
+  "description": "KCA Campus Smart Equipment & Lab Asset Reservation System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "nodemon --watch src --watch server.js --watch database --watch public -e js,sql,html,css server.js",
+    "seed": "node --disable-warning=ExperimentalWarning database/seed.js",
+    "reset": "node --disable-warning=ExperimentalWarning database/seed.js --reset",
+    "test": "node --disable-warning=ExperimentalWarning --test tests/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "html5-qrcode": "^2.3.8",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "license": "MIT",
+  "engines": { "node": ">=22.13" }
+}
