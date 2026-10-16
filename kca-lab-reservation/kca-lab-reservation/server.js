@@ -7,11 +7,15 @@ const { createApp } = require('./src/app');
 const { startScheduler, runJobs } = require('./src/scheduler');
 const { seed } = require('./database/seed');
 
-const db = openDb(process.env.DB_FILE || './data/kca_lab.db');
-if (!db.prepare('SELECT 1 FROM users LIMIT 1').get()) {
-  seed(db);
-  console.log('Empty database detected — demo data loaded (see README for demo logins).');
+const dbFile = process.env.DB_FILE || './data/kca_lab.db';
+const dbDir = path.dirname(dbFile);
+
+// Ensure the data directory exists
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, { recursive: true });
 }
+
+const db = openDb(dbFile);
 runJobs(db);
 startScheduler(db);
 
